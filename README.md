@@ -52,7 +52,7 @@ TodoWebApp is a web application built using Go and the Gin framework that allows
 
 1. Clone the repository:
     ```bash
-    git clone <repository-url>
+    git clone <https://github.com/ayayaakasvin/TodoWebApp>
     cd TodoWebApp
     ```
 2. Run the tidy command:
