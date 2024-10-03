@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <!-- <link rel="stylesheet" href="/codes/sessionTestC/static/todoStyle.css"> used for testing the front -->
+    <link rel="stylesheet" href="/static/todoStyle.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="username-container">
+            <span class="username">{{ .Username }}</span>
+        </div>
+        <form action="/user/logout", method="post">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
+    </div>
+    
+
+    <div id="myDIV" class="header">
+        <h2>My To Do List</h2>
+        <form action="/user/addTask" method="POST">
+            <input type="text" id="myInput" name="taskTitle" placeholder="Title...">
+            <button type="submit" class="addBtn">Add</button>
+        </form>
+    </div>
+      
+    {{ if .tasks.Tasks }} 
+    <ul id="myUL">
+        {{ range $index, $task := .tasks.Tasks }}
+        <li>
+            {{ $task.Description }}
+            <form method="POST" action="/user/deleteTask">
+                <input type="hidden" name="TaskID" value="{{ $task.TaskID }}">
+                <button type="submit" class="close" aria-label="Delete task"> X</button>
+            </form>            
+        </li>
+        {{ end }}
+    </ul>
+    {{ else }}
+        <p class="NoTasks">You have no tasks</p>
+    {{ end }}
+</body>
+</html>

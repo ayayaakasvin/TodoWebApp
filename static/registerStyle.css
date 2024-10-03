@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("/static/backgroundPhotos/blueBackground.jpeg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main {
+    background-color: transparent;
+    text-align: center;
+    outline: none;
+    width: 300px;
+    color: black;
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0, 0, 10px rgb(0, 0, 0, .2);
+    border: 2px solid rgb(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+}
+
+.main h1 {
+    font-size: 37px;
+    font-weight: 1000;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.main h1:hover {
+    color: black;
+    transform: scale(1.05); /* Slightly increase size */
+}
+
+.main .input-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 45px;
+    position: relative;
+    margin: 15px 0 1px 0;
+}
+
+.input-box input {
+    font-size: 15px;
+    padding-left: 11px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    height: 85%;
+    font-weight: 600;
+    border: 2px solid rgb(0, 0, 0, .2);
+    color: black !important;
+    background: transparent;
+    width: 100%;
+    max-width: 100%;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.input-box input:hover {
+    border-color: rgba(0, 0, 0, 0.5); /* Change border color on hover */
+    background-color: rgba(0, 0, 0, 0.1); /* Change background color on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+.main .haveAccount {
+    text-align: center;
+    font-weight: 800;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.haveAccount a {
+    text-decoration: none; /* Remove default underline */
+    color: #000; /* Optional: specify link color */
+}
+
+.haveAccount a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.main .btn {
+    width: 150px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 15px;
+    font-size: 19px;
+    margin-top: 10px;
+    border: 2px solid rgb(255, 255, 255, .2);
+    background-color: transparent;
+    transition: all 0.3s ease; /* Smooth transition */
+    color: #fff; /* Optional: specify text color */
+}
+
+
+.main .btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Change background color on hover */
+    border-color: rgba(255, 255, 255, 0.5); /* Change border color on hover */
+    color: #000; /* Optional: change text color on hover */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Add shadow effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style for error messages */
+.error-message {
+    color: #d8000c; /* Text color */
+    background-color: #fdd; /* Background color */
+    font-weight: 600; /* Font weight */
+    font-size: 1.1em; /* Font size */
+    margin-top: 10px; /* Margin above */
+    margin-bottom: 10px; /* Margin below */
+    padding: 10px; /* Padding around text */
+    border: 1px solid #d8000c; /* Border color */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    line-height: 1.4; /* Line height */
+    max-width: 100%; /* Max width */
+    width: auto; /* Auto width */
+    text-align: center; /* Center align text */
+    opacity: 0; /* Initially invisible for fade-in effect */
+    animation: fadeIn 0.5s ease-out forwards; /* Apply initial fade-in animation */
+}
+
+/* Hover animation */
+.error-message:hover {
+    background-color: #f8d7da; /* Slightly different background color on hover */
+    color: #721c24; /* Darker text color on hover */
+    transform: scale(1.02); /* Slightly enlarge the error message on hover */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transition */
+}

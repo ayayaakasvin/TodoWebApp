@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/registerStyle.css">
+</head>
+<body>
+    <div class="main">
+        <form action="/register" method="POST">
+            <h1>Register</h1>
+            <div class="input-box">
+                <label for="uname"></label>
+                <input type="text" name="uname" id="uname" placeholder="Enter Username" required>
+            </div>
+
+            <div class="input-box">
+                <label for="pword"></label>
+                <input type="text" name="pword" id="pword" placeholder="Enter password" required>
+            </div>
+
+            <div class="input-box">
+                <label for="pword_"></label>
+                <input type="text" name="re-pword" id="re-pword" placeholder="Re-enter password" required>
+            </div>
+
+            <div class="haveAccount">
+                <a href="http://localhost:8080/login">Already have account?</a>
+            </div>
+
+            <button type="submit" class=btn>
+                Register
+        </button>
+        </form>
+    </div>
+</body>
+</html>` -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/registerStyle.css">
+</head>
+<body>
+    <div class="main">
+        <form action="/register" method="POST">
+            <h1>Register</h1>
+            <div class="input-box">
+                <label for="uname"></label>
+                <input type="text" name="uname" id="uname" placeholder="Enter Username" required value="{{ .Form.Username }}">
+            </div>
+
+            {{ if .UserExistError }}
+                <div class="error-message">
+                    {{ .UserExistError }}
+                </div>
+            {{ end }}
+
+            <div class="input-box">
+                <label for="pword"></label>
+                <input type="password" name="pword" id="pword" placeholder="Enter password" required value="{{ .Form.Password }}">
+            </div>
+
+            <div class="input-box">
+                <label for="pword_"></label>
+                <input type="password" name="re-pword" id="re-pword" placeholder="Re-enter password" required value="{{ .Form.Re_Password }}">
+            </div>
+
+            {{ if .PasswordError }}
+                <div class="error-message">
+                    {{ .PasswordError }}
+                </div>
+            {{ end }}
+
+            <div class="password-rules">
+                <p>Password must contain:</p>
+                <ul>
+                    <li>At least 8 characters</li>
+                    <li>At least one latin letter</li>
+                    <li>At least one number</li>
+                    <li>No spaces</li>
+                </ul>
+            </div>
+
+            <div class="haveAccount">
+                <a href="http://localhost:8080/login">Already have account?</a>
+            </div>
+
+            <button type="submit" class=btn>
+                Register
+        </button>
+        </form>
+    </div>
+</body>
+</html>
